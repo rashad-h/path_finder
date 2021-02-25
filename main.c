@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "register_login.h"
+//#include "book_management.h"
 
 
 int main(int argc, char const *argv[])
@@ -16,7 +18,7 @@ int main(int argc, char const *argv[])
         printf(" Option: ");
 
         // Evaluationg the option
-        int option;
+        static int option;
         scanf("%d", &option);
         printf("\n");
 
@@ -24,22 +26,18 @@ int main(int argc, char const *argv[])
         // Option 1 (Register an account)
         if (option == 1)
         {
-            static int re
-            register_user();
-
-            //
-
-
-
             option = 0;
             while ((getchar()) != '\n');
+            register_user();
+
+            
         }
 
         //option 2 (Login)
         else if (option ==2)
         {
-            static int lg_usr;
-            usr = login_user();
+
+            //login_user();
 
             //if librarian
 
@@ -59,7 +57,7 @@ int main(int argc, char const *argv[])
         else if (option ==3)
         {
 
-            find_book();
+            //find_book();
             
             option = 0;
             while ((getchar()) != '\n');
@@ -69,6 +67,9 @@ int main(int argc, char const *argv[])
         //option 4 (Display all books)
         else if (option ==4)
         {
+
+
+            //display_all_books();
             option = 0;
             while ((getchar()) != '\n');
             /* code */
