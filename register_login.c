@@ -5,9 +5,20 @@
 
 const unsigned int borrow_limit = 2; // limit of how many books can a user borrow
 
+// struct User first_user;
+
+
+struct UserArray all_users = {, 0}; //array of all users
+// all_users.array = (User* ) malloc(sizeof(User));
+// all_users.length = 0;
+
+
+
 
 //Registering users
 int register_user() {
+
+    printf("%lu\n", sizeof(struct User));
 
     char name[MAX];
     char username[MAX];
@@ -36,56 +47,98 @@ int register_user() {
     printf("Please enter an email: ");
     fgets(email, MAX, stdin);
 
-    printf("\n");
+    
 
     //for checking email
+    
     for (int i = 0; i < MAX; i++)
     {
+        if (email[i] == '\n')
+        {
+            invalid_email = 1;
+            break;
+        }
+        
         if(email[i] == '@') {
             invalid_email = 0;
+            break;
         }
+        
     }
+    printf("\n");
 
     //check username
     if ((0 == (strcmp(username, "librarian\n"))) || 0) //check to see if librarian or alredy exists
     {
-        printf("opps");
+        printf("Sorry, registration unsuccessful, the username you enterd already exists.\n\n");
         return 1;
     }
 
     //check email
-    else if (invalid_email) {
-        printf("Emailllllll\n");
-        return 1;
-
-    } 
     
-    //adding user
     else {
-        add_user()
-    return 0;
+            if (invalid_email) {
+                printf("THe email address entered is invalid!\n\n");
+                return 1;
+
+            } 
+                //adding user
+            else {
+                add_user(name, username, password, email);
+                printf("Registration successful!\n\n");
+                for (int i = 0; i < all_users.length; i++)
+                {
+                    printf("%s, %p\n", (all_users.array + i)->name, (all_users.array + i));
+                }
+                return 0;
+                
+            }
     }
+    
+    
+
 
 }
 
 
 
 // //logging in
-// int login_user() {
+int login_user() {
 
-//     //input username
+    char username[MAX];
+    char password[MAX];
 
-//     //input password
+    //input username
+    printf("Please enter a username: ");
+    fgets(username, MAX, stdin);
 
-//     //check if lbrarian
+    //input password
+    printf("Please enter a password: ");
+    fgets(password, MAX, stdin);
 
-//     //librarian function
+    //check if lbrarian
+    if ((0 == (strcmp(username, "librarian\n"))) && (0 == (strcmp(password, "librarian\n")))) {
+        //librarian function
+        //librarin_function();
+        return 0;
+    }
 
-//     //else try to find user
+    // else
+    // {
+    //     if (/* condition */)
+    //     {
+    //         /* code */
+    //     }
+        
+    // }
+    
+    
 
-//     //user function
-//     return 0;
-// }
+    //else try to find user
+
+    //user function
+    return 0;
+}
 
 
 // //Logged in as a librarian
@@ -111,6 +164,35 @@ int register_user() {
 // //Add user
 // //return 0 if user is added successfully
 int add_user(char* name, char* username, char* password, char* email) {
+
+    
+    // struct User* a_user;= all_users.array + all_users.length;
+    // a_user = (User *) malloc(sizeof(User));
+    //(all_users.array + all_users.length)->
+
+    if (all_users.length == 0)
+    {
+        all_users.array = (User* ) malloc(sizeof(User));
+        all_users.array->name = name;
+        all_users.array->username = username;
+        all_users.array->password = password;
+        all_users.array->email = email;
+    }
+    else
+    {
+        (all_users.array + all_users.length)->name = name;
+        (all_users.array + all_users.length)->username = username;
+        (all_users.array + all_users.length)->password = password;
+        (all_users.array + all_users.length)->email = email;
+    }
+    
+
+    
+
+    printf("%s, %p\n", (all_users.array + all_users.length)->name, (all_users.array + all_users.length));
+
+    all_users.length = all_users.length + 1;
+
 
     return 0;
 }

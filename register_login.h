@@ -20,11 +20,12 @@ struct User
 struct UserArray
 {
     struct User* array; //pointer to the array of struct book
-    unsigned int lenght; //number of users
+    unsigned int length; //number of users
 };
 
 
-extern struct UserArray users; // array of all users (except librarian)
+struct UserArray all_users; // array of all users (except librarian)
+
 
 
 
