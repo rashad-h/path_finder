@@ -1,0 +1,3 @@
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/build/CMakeFiles/rebuild_cache.dir
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/build/CMakeFiles/edit_cache.dir
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/build/CMakeFiles/run.dir

@@ -6,7 +6,8 @@
 
 int main(int argc, char const *argv[])
 {
-    struct UserArray all_users = {0, 0}; //array of all users
+    struct UserArray all_users; //array of all users
+    all_users.length = 0;
     all_users.array = (struct User* ) malloc(MAX * sizeof(struct User));
     
     while (1)
