@@ -54,7 +54,7 @@ struct User find_user(char* username);
 
 //Add user
 //return 0 if user is added successfully
-int add_user(char* name, char* username, char* password, char* email);
+void add_user(char* name, char* username, char* password, char* email);
 
 //Borrow books
 //return 0 if successful otherwise return 1;

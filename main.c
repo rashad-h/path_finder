@@ -3,10 +3,11 @@
 #include "register_login.h"
 //#include "book_management.h"
 
+struct UserArray all_users; //array of all users
 
 int main(int argc, char const *argv[])
 {
-    struct UserArray all_users; //array of all users
+    
     all_users.length = 0;
     all_users.array = (struct User* ) malloc(MAX * sizeof(struct User));
     
@@ -85,7 +86,11 @@ int main(int argc, char const *argv[])
             option = 0;
             while ((getchar()) != '\n');
 
-
+            for (int i = 0; i < all_users.length; i++)
+            {
+                printf("%s\n", all_users.array[i].name);
+            }
+            
 
 
             exit(1);

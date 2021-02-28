@@ -38,10 +38,7 @@ int register_user() {
     //input email
     email = ask_question("Please enter an email: ");
 
-    
-
     //for checking email
-    
     for (int i = 0; i < strlen(email); i++)
     {
         if (email[i] == '\n')
@@ -274,19 +271,18 @@ int user_function(struct User* user) {
 
 // //Add user
 // //return 0 if user is added successfully
-int add_user(char* name, char* username, char* password, char* email) {
-    printf("1\n");
+void add_user(char* name, char* username, char* password, char* email) {
+
     all_users.array[all_users.length].name = name;
-    printf("2\n");
+
     all_users.array[all_users.length].username = username;
-    printf("3\n");
+
     all_users.array[all_users.length].password = password;
-    printf("4\n");
+
     all_users.array[all_users.length].email = email;
-    printf("5\n");
-    all_users.length = all_users.length + 1;
-    printf("6\n");
-    return 0;
+
+    all_users.length++;
+
 }
 
 // //Borrow books
