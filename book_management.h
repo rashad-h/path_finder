@@ -18,8 +18,8 @@ struct BookArray {
 };
 
 
-extern struct BookArray library_books; //array of books in the library
-extern struct BookArray borrowed_books; //array of borrowd books
+struct BookArray library_books; //array of books in the library
+struct BookArray borrowed_books; //array of borrowd books
 
 
 

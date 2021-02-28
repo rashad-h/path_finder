@@ -6,7 +6,8 @@
 
 int main(int argc, char const *argv[])
 {
-
+    struct UserArray all_users = {0, 0}; //array of all users
+    all_users.array = (struct User* ) malloc(MAX * sizeof(struct User));
     
     while (1)
     {
@@ -37,8 +38,10 @@ int main(int argc, char const *argv[])
         //option 2 (Login)
         else if (option ==2)
         {
+            option = 0;
+            while ((getchar()) != '\n');
 
-            //login_user();
+            login_user();
 
             //if librarian
 
@@ -50,8 +53,7 @@ int main(int argc, char const *argv[])
 
 
 
-            option = 0;
-            while ((getchar()) != '\n');
+            
         }
 
         //option 3 (Search for books)
@@ -82,11 +84,8 @@ int main(int argc, char const *argv[])
             option = 0;
             while ((getchar()) != '\n');
 
-            for (int i = 0; i < all_users.length; i++)
-            {
-                printf("%s, %p\n", (all_users.array + i)->name, (all_users.array + i));
-            }
-            
+
+
 
             exit(1);
         }

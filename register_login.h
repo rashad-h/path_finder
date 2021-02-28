@@ -7,6 +7,7 @@
 
 #define MAX 50 //max number for strings
 
+
 struct User
 {
     char* name; //name of the user
@@ -17,6 +18,8 @@ struct User
     struct BookArray borrowed_by_user; //array of books borrowd by this user
 };
 
+
+
 struct UserArray
 {
     struct User* array; //pointer to the array of struct book
@@ -24,7 +27,8 @@ struct UserArray
 };
 
 
-struct UserArray all_users; // array of all users (except librarian)
+//struct UserArray all_users; // array of all users (except librarian)
+
 
 
 
@@ -42,7 +46,7 @@ int login_user();
 void librarin_function();
 
 //Logged in as a normal user
-void user_function(struct User user);
+int user_function(struct User* user);
 
 
 //Find user by username
@@ -59,5 +63,8 @@ int borrow_book(struct User user, struct Book book);
 //Return book
 //return 0 if successful otherwise return 1;
 int return_book(struct User user, struct Book book);
+
+//Ask questions
+static char *ask_question(const char *question);
 
 #endif
