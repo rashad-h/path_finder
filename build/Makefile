@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named run
+# Target rules for targets named library
 
 # Build rule for target.
-run: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run
-.PHONY : run
+library: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library
+.PHONY : library
 
 # fast build rule for target.
-run/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
-.PHONY : run/fast
+library/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/build
+.PHONY : library/fast
 
 book_management.o: book_management.c.o
 
@@ -148,7 +148,7 @@ book_management.o: book_management.c.o
 
 # target to build an object file
 book_management.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/book_management.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/book_management.c.o
 .PHONY : book_management.c.o
 
 book_management.i: book_management.c.i
@@ -157,7 +157,7 @@ book_management.i: book_management.c.i
 
 # target to preprocess a source file
 book_management.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/book_management.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/book_management.c.i
 .PHONY : book_management.c.i
 
 book_management.s: book_management.c.s
@@ -166,7 +166,7 @@ book_management.s: book_management.c.s
 
 # target to generate assembly for a file
 book_management.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/book_management.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/book_management.c.s
 .PHONY : book_management.c.s
 
 main.o: main.c.o
@@ -175,7 +175,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -184,7 +184,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -193,7 +193,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/main.c.s
 .PHONY : main.c.s
 
 register_login.o: register_login.c.o
@@ -202,7 +202,7 @@ register_login.o: register_login.c.o
 
 # target to build an object file
 register_login.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/register_login.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/register_login.c.o
 .PHONY : register_login.c.o
 
 register_login.i: register_login.c.i
@@ -211,7 +211,7 @@ register_login.i: register_login.c.i
 
 # target to preprocess a source file
 register_login.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/register_login.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/register_login.c.i
 .PHONY : register_login.c.i
 
 register_login.s: register_login.c.s
@@ -220,7 +220,7 @@ register_login.s: register_login.c.s
 
 # target to generate assembly for a file
 register_login.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/register_login.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/register_login.c.s
 .PHONY : register_login.c.s
 
 # Help Target
@@ -231,7 +231,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... run"
+	@echo "... library"
 	@echo "... book_management.o"
 	@echo "... book_management.i"
 	@echo "... book_management.s"
