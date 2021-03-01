@@ -4,15 +4,21 @@
 //#include "book_management.h"
 
 struct UserArray all_users; //array of all users
+struct BookArray all_books; //array of all books
+
 
 int main(int argc, char const *argv[])
 {
     
     all_users.length = 0;
-    all_users.array = (struct User* ) malloc(MAX * sizeof(struct User));
+    all_users.array = (struct User* ) malloc(sizeof(struct User));
+
+    all_books.length = 0;
+    all_books.array = (struct Book* ) malloc(sizeof(struct Book));
     
     while (1)
     {
+        printf("\n");
         printf("Please choose an option:\n");
         printf("1) Register an account\n");
         printf("2) Login\n");
@@ -85,14 +91,7 @@ int main(int argc, char const *argv[])
         {
             option = 0;
             while ((getchar()) != '\n');
-
-            for (int i = 0; i < all_users.length; i++)
-            {
-                printf("%s\n", all_users.array[i].name);
-            }
-            
-
-
+            printf("Goodbye!\n\n");
             exit(1);
         }
 
@@ -107,14 +106,5 @@ int main(int argc, char const *argv[])
         
 
     }
-    
-
-
-    
-
-
-
-
-
     return 0;
 }

@@ -11,5 +11,5 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_C_FLAGS "-std=c99")
 
 #creates an executable by compiling and linking a list of space separated C files.
-add_executable(run main.c register_login.c)
+add_executable(run main.c register_login.c book_management.c)
 

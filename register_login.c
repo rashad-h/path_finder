@@ -9,10 +9,6 @@ const unsigned int borrow_limit = 2; // limit of how many books can a user borro
 
 struct UserArray all_users = {0, 0}; //array of all users
 
-
-
-
-
 //Registering users
 int register_user() {
 
@@ -56,12 +52,10 @@ int register_user() {
     printf("\n");
 
     //check username
-    if ((0 == (strcmp(username, "librarian"))) || 0) //check to see if librarian or alredy exists
+    if ((0 == (strcmp(username, "librarian"))) || find_user(username)) //check to see if librarian or alredy exists
     {
         printf("Sorry, registration unsuccessful, the username you enterd already exists.\n\n");
-
         return 1;
-        
     }
 
     //check email
@@ -71,21 +65,12 @@ int register_user() {
                 printf("The email address entered is invalid!\n\n");
 
                 return 1;
-                
-
             } 
-                //adding user
-                
+                //adding user 
             else {
                 add_user(name, username, password, email);
                 printf("Registration successful!\n\n");
-                // free(name);
-                // free(username);
-                // free(password);
-                // free(email);
-                return 0;
-                
-                
+                return 0;   
             }
     }
     
@@ -99,40 +84,41 @@ int register_user() {
 // //logging in
 int login_user() {
 
-    char username[MAX];
-    char password[MAX];
+    char* username;
+    char* password;
 
     //input username
-    printf("Please enter a username: ");
-    fgets(username, MAX, stdin);
+    username = ask_question("Please enter a username: ");
 
     //input password
-    printf("Please enter a password: ");
-    fgets(password, MAX, stdin);
+    password = ask_question("Please enter a password: ");
 
+    printf("\n");
     //check if lbrarian
-    if ((0 == (strcmp(username, "librarian\n"))) && (0 == (strcmp(password, "librarian\n")))) {
-        printf("librarian\n");
+    if ((0 == (strcmp(username, "librarian"))) && (0 == (strcmp(password, "librarian")))) {
         //librarian function
-        //librarin_function();
+        librarian_function();
         return 0;
     }
 
-    // else
-    // {
-    //     if (/* condition */)
-    //     {
-    //         /* code */
-    //     }
+    else
+    {
+        if (find_user(username))
+        {
+            if (!strcmp(find_user(username)->password, password))
+            {
+                //Login function
+                user_function(find_user(username));
+                return 0;
+            }
+            
+        }
+
+        printf("Incrorrect username or password!\n\n");
+        return 1;
         
-    // }
+    }
     
-    
-
-    //else try to find user
-
-
-    //user function
     return 0;
 }
 
@@ -160,6 +146,8 @@ int librarian_function() {
         {
             option = 0;
             while ((getchar()) != '\n');
+            //adding book interface
+            ready_add_book();
         }
         //Remove a book
         else if (option ==2)
@@ -171,20 +159,25 @@ int librarian_function() {
         else if (option ==3)
         {
             option = 0;
-            while ((getchar()) != '\n');    
+            while ((getchar()) != '\n');  
+            //find a book
+            find_book();  
         }
         //Display all books
         else if (option ==4)
         {
             option = 0;
             while ((getchar()) != '\n');
+            //display all books
+            printf("Displaying all books...\n\n");
+            display_book_array(all_books);
         }
         //Log out
         else if (option ==5)
         {
             option = 0;
             while ((getchar()) != '\n');
-            printf("Logging out...\n");
+            printf("Logging out...\n\n");
             return 0;
         }
         //wrong option
@@ -205,7 +198,7 @@ int librarian_function() {
 int user_function(struct User* user) {
      while (1)
     {
-        printf("Logged in as: \n");
+        printf("Logged in as: %s\n", user->username);
         printf("Please choose an option:\n");
         printf("1) Borrow a book\n");
         printf("2) Return a book\n");
@@ -235,20 +228,25 @@ int user_function(struct User* user) {
         else if (option ==3)
         {
             option = 0;
-            while ((getchar()) != '\n');    
+            while ((getchar()) != '\n'); 
+            // Finding books
+            find_book();   
         }
         //Display all books
         else if (option ==4)
         {
             option = 0;
             while ((getchar()) != '\n');
+            // Displaying all books
+            printf("Displaying all books...\n\n");
+            display_book_array(all_books);
         }
         //Log out
         else if (option ==5)
         {
             option = 0;
             while ((getchar()) != '\n');
-            printf("Logging out...\n");
+            printf("Logging out...\n\n");
             return 0;
         }
         //wrong option
@@ -264,15 +262,24 @@ int user_function(struct User* user) {
 }
 
 // //Find user by username
-// struct User find_user(char* username){
+struct User* find_user(char* username){
+    for (int i = 0; i < all_users.length; i++)
+    {
+        if (!strcmp(all_users.array[i].username, username))
+        {
+            return &all_users.array[i];
+        }
+        
+    }
+    return 0;    
 
-
-// }
+}
 
 // //Add user
 // //return 0 if user is added successfully
 void add_user(char* name, char* username, char* password, char* email) {
 
+    all_users.array = realloc(all_users.array, (all_users.length + 1) * sizeof(struct User));
     all_users.array[all_users.length].name = name;
 
     all_users.array[all_users.length].username = username;
@@ -301,7 +308,7 @@ void add_user(char* name, char* username, char* password, char* email) {
 
 
 //ask questions
-static char *ask_question(const char *question) {
+char *ask_question(const char *question) {
 
 	printf("%s",question);
 

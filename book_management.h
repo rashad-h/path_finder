@@ -9,7 +9,6 @@ struct Book {
 		char *authors; //comma separated list of authors
 		unsigned int year; // year of publication
 		unsigned int copies; //number of copies the library has
-		unsigned int id; //id of the book
 };
 
 struct BookArray {
@@ -18,7 +17,7 @@ struct BookArray {
 };
 
 
-struct BookArray library_books; //array of books in the library
+struct BookArray all_books; //array of books in the library
 struct BookArray borrowed_books; //array of borrowd books
 
 
@@ -32,6 +31,10 @@ int store_books(FILE *file);
 //returns 0 if books were loaded correctly, or an error code otherwise
 int load_books(FILE *file);
 
+//interface for adding book
+//returns 0 if successful
+int ready_add_book();
+
 //adds a book to the ones available to the library
 //returns 0 if the book could be added, or an error code otherwise
 int add_book(struct Book book);
@@ -40,8 +43,11 @@ int add_book(struct Book book);
 //returns 0 if the book could be successfully removed, or an error code otherwise.
 int remove_book(struct Book book);
 
-//a function for printing out all books
-int display_all_books();
+// Remove book interface
+void ready_remove_book();
+
+//Display array of books
+void display_book_array(struct BookArray results); 
 
 //finds books with a given title.
 //returns a BookArray structure, where the field "array" is a newly allocated array of books, or null if no book with the 
@@ -62,7 +68,8 @@ struct BookArray find_book_by_author (const char *author);
 struct BookArray find_book_by_year (unsigned int year);
 
 //Generally finding a book
-struct BookArray find_book();
+// 0 if successful, 1 if not
+int find_book();
 
 
 #endif

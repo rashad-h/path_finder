@@ -5,8 +5,6 @@
 #include "book_management.h"
 
 
-#define MAX 50 //max number for strings
-
 
 struct User
 {
@@ -43,14 +41,15 @@ int login_user();
 
 
 //logged in as a Librarian
-void librarin_function();
+int librarian_function();
 
 //Logged in as a normal user
+//return 0 if user not found
 int user_function(struct User* user);
 
 
 //Find user by username
-struct User find_user(char* username);
+struct User* find_user(char* username);
 
 //Add user
 //return 0 if user is added successfully
@@ -65,6 +64,6 @@ int borrow_book(struct User user, struct Book book);
 int return_book(struct User user, struct Book book);
 
 //Ask questions
-static char *ask_question(const char *question);
+char *ask_question(const char *question);
 
 #endif

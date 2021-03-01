@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/book_management.c" "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/build/CMakeFiles/run.dir/book_management.c.o"
   "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/main.c" "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/build/CMakeFiles/run.dir/main.c.o"
   "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/register_login.c" "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/build/CMakeFiles/run.dir/register_login.c.o"
   )

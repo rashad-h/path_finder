@@ -142,6 +142,33 @@ run/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
 
+book_management.o: book_management.c.o
+
+.PHONY : book_management.o
+
+# target to build an object file
+book_management.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/book_management.c.o
+.PHONY : book_management.c.o
+
+book_management.i: book_management.c.i
+
+.PHONY : book_management.i
+
+# target to preprocess a source file
+book_management.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/book_management.c.i
+.PHONY : book_management.c.i
+
+book_management.s: book_management.c.s
+
+.PHONY : book_management.s
+
+# target to generate assembly for a file
+book_management.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/book_management.c.s
+.PHONY : book_management.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -205,6 +232,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... run"
+	@echo "... book_management.o"
+	@echo "... book_management.i"
+	@echo "... book_management.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

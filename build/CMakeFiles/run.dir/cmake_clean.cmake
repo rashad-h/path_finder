@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/run.dir/book_management.c.o"
   "CMakeFiles/run.dir/main.c.o"
   "CMakeFiles/run.dir/register_login.c.o"
   "run"
