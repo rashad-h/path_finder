@@ -4,10 +4,20 @@
 #include "register_login.h"
 
 
-
-const unsigned int borrow_limit = 2; // limit of how many books can a user borrow
-
 struct UserArray all_users = {0, 0}; //array of all users
+
+//variable used for loading
+char* loaded_name;
+char* loaded_username;
+char* loaded_password;
+char* loaded_email;
+
+unsigned int ID_loaded; 
+char* title_loaded; 
+char* authors_loaded; 
+char* user_id_loaded;
+
+
 
 //Registering users
 int register_user() {
@@ -154,6 +164,7 @@ int librarian_function() {
         {
             option = 0;
             while ((getchar()) != '\n');
+            ready_remove_book();
         }
         //Search for books
         else if (option ==3)
@@ -217,12 +228,14 @@ int user_function(struct User* user) {
         {
             option = 0;
             while ((getchar()) != '\n');
+            borrow_book(* user);
         }
         //Return a book
         else if (option ==2)
         {
             option = 0;
             while ((getchar()) != '\n');
+            return_book(* user);
         }
         //Search for books
         else if (option ==3)
@@ -294,17 +307,89 @@ void add_user(char* name, char* username, char* password, char* email) {
 
 // //Borrow books
 // //return 0 if successful otherwise return 1;
-// int borrow_book(struct User user, struct Book book) {
+int borrow_book(struct User user) {
+    display_book_array(all_books);
+    char* book_id;
+    book_id = ask_question("Enter the ID of the book you want to borrow: ");
+    
+    // check id is valid
+    if (atoi(book_id) >= 0 && atoi(book_id) < all_books.length)
+    {
+        //check you have not borrowed this book
+        if (loaned_already(atoi(book_id), user.username))
+        {
+            //check there is enough copies in the library
+            if (all_books.array[atoi(book_id)].copies > 0)
+            {
+                add_loan(atoi(book_id), all_books.array[atoi(book_id)].title, all_books.array[atoi(book_id)].authors, user.username);
+                all_books.array[atoi(book_id)].copies--;
+                printf("Borrowed book successfully!\n\n");
+                return 0;
+            }
+            else
+            {
+                printf("There is not enough copies of this book in the library\n\n");
+                return 1;
+            }
+            
+            
+        }
+        else
+        {
+            printf("You have already borrowed this book!\n\n");
+            return 1;
+        }
+        
+        
 
-//     return 0;
-// }
+    }
+    else
+    {
+        printf("Book ID is not valid.\n\n");
+        return 1;
+    }
+
+}
 
 // //Return book
 // //return 0 if successful otherwise return 1;
-// int return_book(struct User user, struct Book book) {
+int return_book(struct User user) {
+    int number_borrowed = 0; //number of books borrowed;
+    for (int i = 0; i < loan_length; i++)
+    {
+        if ((!strcmp(user.username, all_loans[i].user_id))) {
+            printf("%i\t%-32s\t%-32s\n", all_loans[i].ID, all_loans[i].title, all_loans[i].authors);
+            number_borrowed++;
+        }
+    }
+    // check if user has borrowed any books
+    if (number_borrowed > 0)
+    {
+        char* book_id;
+        book_id = ask_question("Enter the ID of the book you want to return: ");
 
-//     return 0;
-// }
+        //check if Id is valid
+        if (!delete_loan(atoi(book_id), user.username))
+        {
+            all_books.array[atoi(book_id)].copies++;
+            printf("The book was returned successfully!\n\n");
+            return 0;
+        }
+        else
+        {
+            printf("The ID enetered is invalid\n\n");
+            return 1;
+        }
+        
+        
+    }
+    else
+    {
+        printf("You have not borrowed any books.\n\n");
+        return 1;
+    }
+
+}
 
 
 //ask questions
@@ -331,4 +416,158 @@ char *ask_question(const char *question) {
 	*(next_chunk-1) = 0; //truncate the string eliminating the new line.
 
 	return answer;
+}
+
+// delete a loan
+// returns 0 if successful
+int delete_loan(unsigned int ID, char* user_id) {
+	for (int i = 0; i < loan_length; i++)
+	{
+		if ((all_loans[i].ID == ID) && (!strcmp(user_id, all_loans[i].user_id)))
+		{
+			for (int j = 0; j < (loan_length - (i + 1)); j++)
+			{
+				all_loans[i].title = all_loans[i + (j + 1)].title;
+				all_loans[i].user_id = all_loans[i + (j + 1)].user_id;
+                all_loans[i].authors = all_loans[i + (j + 1)].authors;
+                all_loans[i].ID = all_loans[i + (j + 1)].ID;
+			}
+			loan_length--;
+			return 0;
+			
+		}
+		
+	}
+    return 1;
+}
+
+// add a loan to all loans
+// returns 0 if successful
+int add_loan(unsigned int ID, char* title, char* authors, char* user_id) {
+    all_loans[loan_length].title = title;
+    all_loans[loan_length].authors = authors;
+    all_loans[loan_length].user_id = user_id;
+    all_loans[loan_length].ID = ID;
+    loan_length++;
+    return 0;
+}
+
+
+// To check if you already have loaned this book
+// return 1 if not loaned
+int loaned_already(unsigned int ID, char* user_id) {
+    for (int i = 0; i < loan_length; i++)
+	{
+		if ((all_loans[i].ID == ID) && (!strcmp(user_id, all_loans[i].user_id)))
+		{
+            return 0;
+        }
+    }
+    return 1;
+}
+
+//saves the database of users in the specified file
+//returns 0 if users were stored correctly, or an error code otherwise
+int store_users(FILE *file) {
+
+    file = fopen("users.txt", "w");
+    fprintf(file, "%i\n", all_users.length);
+    for (int i = 0; i < all_users.length; i++)
+    {
+        fprintf(file, "%s\n%s\n%s\n%s\n", all_users.array[i].name,
+                 all_users.array[i].username, all_users.array[i].password, all_users.array[i].email);
+    }
+    fclose(file);
+    return 0;
+}
+
+//loads the database of users from the specified file
+//the file must have been generated by a previous call to store_users()
+//returns 0 if users were loaded correctly, or an error code otherwise
+int load_users(FILE *file) {
+
+
+    file = fopen("users.txt", "r");
+    if(file == NULL) {
+        return 1;
+    }
+
+    int pre_length = 0;
+    char str[49];
+    fgets(str, 49, file);
+    pre_length = atoi(str);
+    for (int i = 0; i < pre_length; i++)
+    {
+        
+        fgets(str, 49, file);
+        str[strcspn(str, "\n")] = 0;
+        strcpy(loaded_name = (char*)malloc(sizeof(str)), str);
+        
+        fgets(str, 49, file);
+        str[strcspn(str, "\n")] = 0;
+        strcpy(loaded_username = (char*)malloc(sizeof(str)), str);
+
+        fgets(str, 49, file);
+        str[strcspn(str, "\n")] = 0;
+        strcpy(loaded_password = (char*)malloc(sizeof(str)), str);
+
+        fgets(str, 49, file);
+        str[strcspn(str, "\n")] = 0;
+        strcpy(loaded_email = (char*)malloc(sizeof(str)), str);
+
+        add_user(loaded_name, loaded_username, loaded_password, loaded_email);
+
+    }
+    return 0;
+}
+
+//saves the database of loans in the specified file
+//returns 0 if loans were stored correctly, or an error code otherwise
+int store_loans(FILE *file) {
+    file = fopen("loans.txt", "w");
+    fprintf(file, "%i\n", loan_length);
+    for (int i = 0; i < loan_length; i++)
+    {
+        fprintf(file, "%i\n%s\n%s\n%s\n", all_loans[i].ID,
+                 all_loans[i].title, all_loans[i].authors, all_loans[i].user_id);
+    }
+    fclose(file);
+    return 0;
+}
+
+//loads the database of loans from the specified file
+//the file must have been generated by a previous call to store_loans()
+//returns 0 if loans were loaded correctly, or an error code otherwise
+int load_loans(FILE *file) {
+
+    file = fopen("loans.txt", "r");
+    if(file == NULL) {
+        return 1;
+    }
+
+    int pre_length = 0;
+    char str[49];
+    fgets(str, 49, file);
+    pre_length = atoi(str);
+    for (int i = 0; i < pre_length; i++)
+    {
+        fgets(str, 49, file);
+        ID_loaded = atoi(str);
+        
+        fgets(str, 49, file);
+        str[strcspn(str, "\n")] = 0;
+        strcpy(title_loaded = (char*)malloc(sizeof(str)), str);
+
+        fgets(str, 49, file);
+        str[strcspn(str, "\n")] = 0;
+        strcpy(authors_loaded = (char*)malloc(sizeof(str)), str);
+
+        fgets(str, 49, file);
+        str[strcspn(str, "\n")] = 0;
+        strcpy(user_id_loaded = (char*)malloc(sizeof(str)), str);
+
+        add_loan(ID_loaded, title_loaded, authors_loaded, user_id_loaded);
+
+    }
+    return 0;
 }

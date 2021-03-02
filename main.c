@@ -10,11 +10,31 @@ struct BookArray all_books; //array of all books
 int main(int argc, char const *argv[])
 {
     
+    loan_length = 0;
     all_users.length = 0;
     all_users.array = (struct User* ) malloc(sizeof(struct User));
 
-    all_books.length = 0;
-    all_books.array = (struct Book* ) malloc(sizeof(struct Book));
+
+    
+    //variable used for loading
+    struct Book loaded_book;
+
+    char* loaded_name;
+    char* loaded_username;
+    char* loaded_password;
+    char* loaded_email;
+
+    unsigned int ID_loaded; 
+    char* title_loaded; 
+    char* authors_loaded; 
+    char* user_id_loaded;
+
+    //loading
+    FILE* file1;
+    load_books(file1);
+    load_users(file1);
+    load_loans(file1);
+
     
     while (1)
     {
@@ -27,12 +47,17 @@ int main(int argc, char const *argv[])
         printf("5) Quit\n");
         printf(" Option: ");
 
+
+        
+        
+        
+
         // Evaluationg the option
         static int option;
         scanf("%d", &option);
         printf("\n");
 
-
+        
         // Option 1 (Register an account)
         if (option == 1)
         {
@@ -50,40 +75,25 @@ int main(int argc, char const *argv[])
             while ((getchar()) != '\n');
 
             login_user();
-
-            //if librarian
-
-
-            //if normal user
-
-
-            //if user does not exist
-
-
-
             
         }
 
         //option 3 (Search for books)
         else if (option ==3)
         {
-
-            //find_book();
-            
             option = 0;
             while ((getchar()) != '\n');
-            /* code */
+            find_book();
         }
 
         //option 4 (Display all books)
         else if (option ==4)
         {
-
-
-            //display_all_books();
             option = 0;
             while ((getchar()) != '\n');
-            /* code */
+            // Displaying all books
+            printf("Displaying all books...\n\n");
+            display_book_array(all_books);
         }
 
         //option 5 (Quit)
@@ -92,6 +102,14 @@ int main(int argc, char const *argv[])
             option = 0;
             while ((getchar()) != '\n');
             printf("Goodbye!\n\n");
+
+            //saving
+            FILE* file;
+            store_books(file);
+            store_users(file);
+            store_loans(file);
+
+
             exit(1);
         }
 
