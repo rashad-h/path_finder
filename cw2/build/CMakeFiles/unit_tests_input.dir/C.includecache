@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Unity-master/include/unity.h
+unity_internals.h
+../Unity-master/include/unity_internals.h
+
+../Unity-master/include/unity_internals.h
+unity_config.h
+../Unity-master/include/unity_config.h
+setjmp.h
+-
+math.h
+-
+stddef.h
+-
+stdarg.h
+-
+stdint.h
+-
+limits.h
+-
+stdio.h
+-
+stdio.h
+-
+time.h
+-
+time.h
+-
+
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
+stdio.h
+-
+
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/unit_tests_input.c
+unity.h
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/unity.h
+input.h
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
+

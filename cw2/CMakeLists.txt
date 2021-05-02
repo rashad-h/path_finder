@@ -8,7 +8,7 @@ set(CMAKE_BUILD_TYPE Debug)
 
 #adds arbitrary flags to the compiler.
 #this one is used to generate the files we give in input to Egypt.
-set(CMAKE_C_FLAGS "-std=c99 -fdump-rtl-expand")
+set(CMAKE_C_FLAGS "-std=c99")
 
 include_directories("Unity-master/include")
 
