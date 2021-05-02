@@ -102,9 +102,35 @@ CMakeFiles/unit_tests_logic.dir/logic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/unit_tests_logic.dir/logic.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.c -o CMakeFiles/unit_tests_logic.dir/logic.c.s
 
+CMakeFiles/unit_tests_logic.dir/input.c.o: CMakeFiles/unit_tests_logic.dir/flags.make
+CMakeFiles/unit_tests_logic.dir/input.c.o: ../input.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/unit_tests_logic.dir/input.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unit_tests_logic.dir/input.c.o -c /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.c
+
+CMakeFiles/unit_tests_logic.dir/input.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/unit_tests_logic.dir/input.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.c > CMakeFiles/unit_tests_logic.dir/input.c.i
+
+CMakeFiles/unit_tests_logic.dir/input.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/unit_tests_logic.dir/input.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.c -o CMakeFiles/unit_tests_logic.dir/input.c.s
+
+CMakeFiles/unit_tests_logic.dir/graphics.c.o: CMakeFiles/unit_tests_logic.dir/flags.make
+CMakeFiles/unit_tests_logic.dir/graphics.c.o: ../graphics.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/unit_tests_logic.dir/graphics.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unit_tests_logic.dir/graphics.c.o -c /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.c
+
+CMakeFiles/unit_tests_logic.dir/graphics.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/unit_tests_logic.dir/graphics.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.c > CMakeFiles/unit_tests_logic.dir/graphics.c.i
+
+CMakeFiles/unit_tests_logic.dir/graphics.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/unit_tests_logic.dir/graphics.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.c -o CMakeFiles/unit_tests_logic.dir/graphics.c.s
+
 CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.o: CMakeFiles/unit_tests_logic.dir/flags.make
 CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.o: ../Unity-master/src/unity.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.o -c /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/Unity-master/src/unity.c
 
 CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.i: cmake_force
@@ -119,6 +145,8 @@ CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.s: cmake_force
 unit_tests_logic_OBJECTS = \
 "CMakeFiles/unit_tests_logic.dir/unit_tests_logic.c.o" \
 "CMakeFiles/unit_tests_logic.dir/logic.c.o" \
+"CMakeFiles/unit_tests_logic.dir/input.c.o" \
+"CMakeFiles/unit_tests_logic.dir/graphics.c.o" \
 "CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.o"
 
 # External object files for target unit_tests_logic
@@ -126,10 +154,12 @@ unit_tests_logic_EXTERNAL_OBJECTS =
 
 unit_tests_logic: CMakeFiles/unit_tests_logic.dir/unit_tests_logic.c.o
 unit_tests_logic: CMakeFiles/unit_tests_logic.dir/logic.c.o
+unit_tests_logic: CMakeFiles/unit_tests_logic.dir/input.c.o
+unit_tests_logic: CMakeFiles/unit_tests_logic.dir/graphics.c.o
 unit_tests_logic: CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.o
 unit_tests_logic: CMakeFiles/unit_tests_logic.dir/build.make
 unit_tests_logic: CMakeFiles/unit_tests_logic.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable unit_tests_logic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable unit_tests_logic"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests_logic.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

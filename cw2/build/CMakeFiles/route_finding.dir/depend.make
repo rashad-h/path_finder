@@ -8,6 +8,7 @@ CMakeFiles/route_finding.dir/graphics.c.o: ../input.h
 CMakeFiles/route_finding.dir/input.c.o: ../input.c
 CMakeFiles/route_finding.dir/input.c.o: ../input.h
 
+CMakeFiles/route_finding.dir/logic.c.o: ../graphics.h
 CMakeFiles/route_finding.dir/logic.c.o: ../input.h
 CMakeFiles/route_finding.dir/logic.c.o: ../logic.c
 CMakeFiles/route_finding.dir/logic.c.o: ../logic.h

@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/Unity-master/src/unity.c" "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.o"
+  "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.c" "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/unit_tests_logic.dir/graphics.c.o"
+  "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.c" "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/unit_tests_logic.dir/input.c.o"
   "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.c" "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/unit_tests_logic.dir/logic.c.o"
   "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/unit_tests_logic.c" "/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/unit_tests_logic.dir/unit_tests_logic.c.o"
   )

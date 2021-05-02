@@ -222,6 +222,7 @@ graphics.o: graphics.c.o
 graphics.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/route_finding.dir/build.make CMakeFiles/route_finding.dir/graphics.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_graphics.dir/build.make CMakeFiles/unit_tests_graphics.dir/graphics.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_logic.dir/build.make CMakeFiles/unit_tests_logic.dir/graphics.c.o
 .PHONY : graphics.c.o
 
 graphics.i: graphics.c.i
@@ -232,6 +233,7 @@ graphics.i: graphics.c.i
 graphics.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/route_finding.dir/build.make CMakeFiles/route_finding.dir/graphics.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_graphics.dir/build.make CMakeFiles/unit_tests_graphics.dir/graphics.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_logic.dir/build.make CMakeFiles/unit_tests_logic.dir/graphics.c.i
 .PHONY : graphics.c.i
 
 graphics.s: graphics.c.s
@@ -242,6 +244,7 @@ graphics.s: graphics.c.s
 graphics.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/route_finding.dir/build.make CMakeFiles/route_finding.dir/graphics.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_graphics.dir/build.make CMakeFiles/unit_tests_graphics.dir/graphics.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_logic.dir/build.make CMakeFiles/unit_tests_logic.dir/graphics.c.s
 .PHONY : graphics.c.s
 
 input.o: input.c.o
@@ -252,6 +255,7 @@ input.o: input.c.o
 input.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_input.dir/build.make CMakeFiles/unit_tests_input.dir/input.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/route_finding.dir/build.make CMakeFiles/route_finding.dir/input.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_logic.dir/build.make CMakeFiles/unit_tests_logic.dir/input.c.o
 .PHONY : input.c.o
 
 input.i: input.c.i
@@ -262,6 +266,7 @@ input.i: input.c.i
 input.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_input.dir/build.make CMakeFiles/unit_tests_input.dir/input.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/route_finding.dir/build.make CMakeFiles/route_finding.dir/input.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_logic.dir/build.make CMakeFiles/unit_tests_logic.dir/input.c.i
 .PHONY : input.c.i
 
 input.s: input.c.s
@@ -272,6 +277,7 @@ input.s: input.c.s
 input.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_input.dir/build.make CMakeFiles/unit_tests_input.dir/input.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/route_finding.dir/build.make CMakeFiles/route_finding.dir/input.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests_logic.dir/build.make CMakeFiles/unit_tests_logic.dir/input.c.s
 .PHONY : input.c.s
 
 logic.o: logic.c.o

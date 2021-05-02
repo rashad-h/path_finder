@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/unit_tests_logic.dir/Unity-master/src/unity.c.o"
+  "CMakeFiles/unit_tests_logic.dir/graphics.c.o"
+  "CMakeFiles/unit_tests_logic.dir/input.c.o"
   "CMakeFiles/unit_tests_logic.dir/logic.c.o"
   "CMakeFiles/unit_tests_logic.dir/unit_tests_logic.c.o"
   "unit_tests_logic"
