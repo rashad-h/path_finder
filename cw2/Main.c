@@ -5,9 +5,12 @@
 
 int main(int argc, char const *argv[])
 {
-    // Load the map
-    //read_map();
-    //printf("Map was loaded successfully!\n\n");
+    FILE* map;
+    if (!read_map(map))
+    {
+        printf("Map was loaded successfully!\n\n");
+    }
+    
 
     while (1)
     {
@@ -26,9 +29,33 @@ int main(int argc, char const *argv[])
             
             // Find nodes by ID
             int node_id_1;
+            int art_id_1;
             int node_id_2;
-            //node_id_1 = node_by_ID();
-            //node_id_2 = node_by_ID();
+            int art_id_2;
+
+            printf("Please enter the id of the node 1: ");
+            scanf("%lli\n", &node_id_1);
+            if (node_by_ID(node_id_1) == -1)
+            {
+                printf("Sorry the node with this id does not exist!\n");
+                continue;
+            }
+            // inpute node 2
+            printf("Please enter the id of the node 2: ");
+            scanf("%lli\n", &node_id_2);
+            if (node_by_ID(node_id_2) == -1)
+            {
+                printf("Sorry the node with this id does not exist!\n");
+                continue;
+            }
+            // check if they are the same node
+            if (node_by_ID(node_id_2) == node_by_ID(node_id_1))
+            {
+                printf("You have chosen the same nodes!\n");
+                continue;
+            }
+            art_id_1 = node_by_ID(node_id_1);
+            art_id_2 = node_by_ID(node_id_2);
 
             while (1)
             {

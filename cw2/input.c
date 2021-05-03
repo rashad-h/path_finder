@@ -159,7 +159,7 @@ int read_links(FILE* file)
 // returns -1 if fails
 int ID_to_artificial_id(long long ID)
 {   
-    int artificial_id;
+    int artificial_id = -1;
     for (int i = 0; i < num_nodes; i++)
     {
         if (all_nodes[i].id == ID)

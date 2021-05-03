@@ -6,25 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.c
-graphics.h
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.h
-
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.h
 stdio.h
 -
 input.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
-
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.c
-input.h
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
-stdlib.h
--
-stdio.h
--
-string.h
--
 
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
 stdio.h
@@ -33,22 +19,20 @@ stdio.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.c
 logic.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.h
-
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.h
-stdio.h
--
 input.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
 graphics.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.h
+stdlib.h
+-
+math.h
+-
 
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/main.c
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.h
 stdio.h
 -
 input.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
-logic.h
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.h
 graphics.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.h
 

@@ -4,9 +4,14 @@
 
 void test_find_closest_point()
 {
-    int ans = find_closest_point(53.804381, 1.552673);
+    //test case 1
+    int ans = find_closest_point(53.805337, -1.551925);
     TEST_ASSERT_NOT_EQUAL_MESSAGE (-1, ans, "The find_closest_point failed!");
-    TEST_ASSERT_EQUAL_INT (2458, ans);
+    TEST_ASSERT_EQUAL_INT (-2414, all_nodes[ans].id);
+    // test case 2
+    ans = find_closest_point(53.803600, -1.556471);
+    TEST_ASSERT_NOT_EQUAL_MESSAGE (-1, ans, "The find_closest_point failed!");
+    TEST_ASSERT_EQUAL_INT (1152071943, all_nodes[ans].id);
 }
 
 void test_find_shortest_path_Djikstra()
@@ -15,7 +20,8 @@ void test_find_shortest_path_Djikstra()
     test_array = find_shortest_path_Djikstra (3, 10);
     TEST_ASSERT_NOT_NULL (test_array.array);
     TEST_ASSERT_NOT_EQUAL_MESSAGE (0, test_array.length, "The length of the answer is zero");
-
+    TEST_ASSERT_EQUAL_INT (21, test_array.length);
+    
 }
 
 void test_find_shortest_path_Floyd()
@@ -43,6 +49,5 @@ int main()
     RUN_TEST(test_find_closest_point);
     RUN_TEST(test_find_shortest_path_Djikstra);
     RUN_TEST(test_find_shortest_path_Floyd);
-
     return UNITY_END();
 }

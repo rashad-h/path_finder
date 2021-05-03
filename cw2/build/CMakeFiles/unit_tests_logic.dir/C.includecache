@@ -6,53 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../Unity-master/include/unity.h
-unity_internals.h
-../Unity-master/include/unity_internals.h
-
-../Unity-master/include/unity_internals.h
-unity_config.h
-../Unity-master/include/unity_config.h
-setjmp.h
--
-math.h
--
-stddef.h
--
-stdarg.h
--
-stdint.h
--
-limits.h
--
-stdio.h
--
-stdio.h
--
-time.h
--
-time.h
--
-
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.c
-graphics.h
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.h
-
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.h
 stdio.h
 -
 input.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
-
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.c
-input.h
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
-stdlib.h
--
-stdio.h
--
-string.h
--
 
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
 stdio.h
@@ -61,6 +19,14 @@ stdio.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.c
 logic.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.h
+input.h
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
+graphics.h
+/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.h
+stdlib.h
+-
+math.h
+-
 
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.h
 stdio.h
@@ -69,10 +35,4 @@ input.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/input.h
 graphics.h
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/graphics.h
-
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/unit_tests_logic.c
-unity.h
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/unity.h
-logic.h
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.h
 

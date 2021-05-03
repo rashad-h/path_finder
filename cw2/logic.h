@@ -5,9 +5,11 @@
 #include "input.h"
 #include "graphics.h"
 
+#define INF 999999 // number for infinity
+
 // returns the original ID of the node
 // return -1 if not successful
-int node_by_ID(long int ID);
+int node_by_ID(long long ID);
 
 // return the original ID of the node
 // return -1 if not successful
