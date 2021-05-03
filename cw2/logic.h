@@ -24,9 +24,7 @@ struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id);
 struct NodeArray find_shortest_path_Floyd (int node1_id, int node2_id);
 
 
-// get the original id of the node and returns the artificial id
-// returns -1 if fails
-int ID_to_artificial_id(int ID);
+
 
 
 #endif
