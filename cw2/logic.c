@@ -157,7 +157,7 @@ struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
     if (dist[end_node] != INF)
     {
         // printing distance and the path
-        printf("The total distance is %lf\n", dist[end_node]);
+        printf("The total distance is %lf\n\n", dist[end_node]);
         printf("The path is : %lli", all_nodes[end_node].id);
         j = end_node;
         final_path.array = realloc(final_path.array, (final_path.length + 1) * sizeof(struct Node));
@@ -171,13 +171,12 @@ struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
             final_path.length++;
             printf("<- %lli", all_nodes[j].id);
         } while (j != start_node);
-        printf("\n");
+        printf("\n\n");
     }
     else
     {
-        printf("Path does not exist!\n");
+        printf("Path does not exist!\n\n");
     }
-    
     return final_path;
 }
 
