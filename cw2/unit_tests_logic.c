@@ -17,20 +17,20 @@ void test_find_closest_point()
 void test_find_shortest_path_Djikstra()
 {
     struct NodeArray test_array;
-    test_array = find_shortest_path_Djikstra (3, 10);
+    test_array = find_shortest_path_Djikstra (10, 200);
     TEST_ASSERT_NOT_NULL (test_array.array);
     TEST_ASSERT_NOT_EQUAL_MESSAGE (0, test_array.length, "The length of the answer is zero");
-    TEST_ASSERT_EQUAL_INT (21, test_array.length);
+    TEST_ASSERT_EQUAL_INT (22, test_array.length);
     
 }
 
 void test_find_shortest_path_Floyd()
 {
     struct NodeArray test_array;
-    test_array = find_shortest_path_Floyd (3, 10);
+    test_array = find_shortest_path_Floyd (10, 200);
     TEST_ASSERT_NOT_NULL (test_array.array);
     TEST_ASSERT_NOT_EQUAL_MESSAGE (0, test_array.length, "The length of the answer is zero");
-
+    TEST_ASSERT_EQUAL_INT (22, test_array.length);
 }
 
 void setUp()

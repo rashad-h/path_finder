@@ -5,7 +5,10 @@
 #include "input.h"
 #include "graphics.h"
 
-#define INF 999999 // number for infinity
+#define INF 999999 // number for infinity88
+
+double dist_f[MAX_NODES][MAX_NODES]; // distance matrix used for Floyd's Algorithm
+int next[MAX_NODES][MAX_NODES]; // used for Floyd
 
 // returns the original ID of the node
 // return -1 if not successful

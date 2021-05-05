@@ -27,6 +27,8 @@ stdlib.h
 -
 math.h
 -
+time.h
+-
 
 /Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/logic.h
 stdio.h

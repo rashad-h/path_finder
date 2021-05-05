@@ -80,9 +80,7 @@ int main(int argc, char const *argv[])
                     option = 0;
                     while ((getchar()) != '\n');
 
-                    // Use Floyd
-                    //final_path = find_shortest_path_Floyd(node_id_1, node_id_2);
-                    // show_results(final_path);
+                    final_path = find_shortest_path_Floyd (art_id_1, art_id_2);
                 }
                 else if (option == 0)
                 {
@@ -173,9 +171,7 @@ int main(int argc, char const *argv[])
                     option = 0;
                     while ((getchar()) != '\n');
 
-                    // Use Floyd
-                    //final_path = find_shortest_path_Floyd(node_id_1, node_id_2);
-                    // show_results(final_path);
+                    final_path = find_shortest_path_Floyd (node_id_1, node_id_2);
                 }
                 else if (option == 0)
                 {

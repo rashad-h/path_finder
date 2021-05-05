@@ -3,6 +3,7 @@
 #include "graphics.h"
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 // returns the original ID of the node
 // return -1 if not successful
@@ -42,6 +43,10 @@ int find_closest_point (double lat, double lon)
 // returns NULL if not successful
 struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
 {
+    // start time
+    double time_spent = 0.0;
+    clock_t begin = clock();
+
     int start_node = node1_id;
     int end_node = node2_id;
     int visited[MAX_NODES]; // keeping track of the nodes which are already visited
@@ -157,7 +162,7 @@ struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
     if (dist[end_node] != INF)
     {
         // printing distance and the path
-        printf("The total distance is %lf\n\n", dist[end_node]);
+        printf("\nThe total distance is %lf\n\n", dist[end_node]);
         printf("The path is : %lli", all_nodes[end_node].id);
         j = end_node;
         final_path.array = realloc(final_path.array, (final_path.length + 1) * sizeof(struct Node));
@@ -171,12 +176,19 @@ struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
             final_path.length++;
             printf("<- %lli", all_nodes[j].id);
         } while (j != start_node);
-        printf("\n\n");
+        
     }
     else
     {
         printf("Path does not exist!\n\n");
     }
+    printf("\n\n");
+
+    // end time
+    clock_t end = clock();
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+    printf("The time taken is %f seconds\n\n", time_spent);
+
     return final_path;
 }
 
@@ -184,11 +196,87 @@ struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
 // returns NULL if not successful
 struct NodeArray find_shortest_path_Floyd (int node1_id, int node2_id) 
 {
+    // start time
+    double time_spent = 0.0;
+    clock_t begin = clock();
+    
     struct NodeArray final_path;
-
-
-    /////
-    final_path.array = NULL;
+    final_path.array = (struct Node* ) malloc(sizeof(struct Node));;
     final_path.length = 0;
+    // initialize dist_f and next
+    for (int i = 0; i < num_nodes; i++) {
+        for (int j = 0; j < num_nodes; j++) {
+
+            if (adjacency_matrix[i][j] == 0)
+            {
+                dist_f[i][j] = INF;
+                next[i][j] = -1;
+            }
+            else
+            {
+                dist_f[i][j] = adjacency_matrix[i][j];
+                next[i][j] = j;
+            }
+            // dis[i][j] = graph[i][j];
+ 
+            // // No edge between node
+            // // i and j
+            // if (graph[i][j] == INF)
+            //     Next[i][j] = -1;
+            // else
+            //     Next[i][j] = j;
+        }
+    }
+    // applying the Floyd's algorithm
+    for (int k = 0; k < num_nodes; k++) {
+        for (int i = 0; i < num_nodes; i++) {
+            for (int j = 0; j < num_nodes; j++) {
+ 
+                // We cannot travel through
+                // edge that doesn't exist
+                if (dist_f[i][k] == INF
+                    || dist_f[k][j] == INF)
+                    continue;
+ 
+                if (dist_f[i][j] > dist_f[i][k] + dist_f[k][j]) {
+                    dist_f[i][j] = dist_f[i][k] + dist_f[k][j];
+                    next[i][j] = next[i][k];
+                }
+            }
+        }
+
+    }
+    // check if a path exists
+    if (dist_f[node1_id][node2_id] != INF)
+    {
+        // printing the total distance
+        printf("\nThe total distance is %lf\n\n", dist_f[node1_id][node2_id]);
+
+        // filling the final path
+        int v = node1_id;
+        int u = node2_id;
+        final_path.array = realloc(final_path.array, (final_path.length + 1) * sizeof(struct Node));
+        final_path.array[final_path.length] = all_nodes[u];
+        final_path.length++;
+        printf("The path is : %lli", all_nodes[u].id);
+        while (u != v) {
+            u = next[u][v];
+            final_path.array = realloc(final_path.array, (final_path.length + 1) * sizeof(struct Node));
+            final_path.array[final_path.length] = all_nodes[u];
+            final_path.length++;
+            printf("<- %lli", all_nodes[u].id);
+        }
+    }
+    else
+    {
+        printf("Path does not exist!\n\n");
+    }
+    printf("\n\n");
+
+    // end time
+    clock_t end = clock();
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+    printf("The time taken is %f seconds\n\n", time_spent);
+
     return final_path;
 }
