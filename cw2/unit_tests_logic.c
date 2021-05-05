@@ -1,7 +1,8 @@
 #include "unity.h"
 #include "logic.h"
 
-
+// return the original ID of the node
+// return -1 if not successful
 void test_find_closest_point()
 {
     //test case 1
@@ -14,23 +15,27 @@ void test_find_closest_point()
     TEST_ASSERT_EQUAL_INT (1152071943, all_nodes[ans].id);
 }
 
+// return the path using Dijkstra
+// NodeArray.length = 0 if not successful
 void test_find_shortest_path_Djikstra()
 {
     struct NodeArray test_array;
-    test_array = find_shortest_path_Djikstra (10, 200);
+    test_array = find_shortest_path_Djikstra (3, 10);
     TEST_ASSERT_NOT_NULL (test_array.array);
     TEST_ASSERT_NOT_EQUAL_MESSAGE (0, test_array.length, "The length of the answer is zero");
-    TEST_ASSERT_EQUAL_INT (22, test_array.length);
+    TEST_ASSERT_EQUAL_INT (21, test_array.length);
     
 }
 
+// return the path using Floyd
+// NodeArray.length = 0 if not successful
 void test_find_shortest_path_Floyd()
 {
     struct NodeArray test_array;
-    test_array = find_shortest_path_Floyd (10, 200);
+    test_array = find_shortest_path_Floyd (3, 10);
     TEST_ASSERT_NOT_NULL (test_array.array);
     TEST_ASSERT_NOT_EQUAL_MESSAGE (0, test_array.length, "The length of the answer is zero");
-    TEST_ASSERT_EQUAL_INT (22, test_array.length);
+    TEST_ASSERT_EQUAL_INT (21, test_array.length);
 }
 
 void setUp()

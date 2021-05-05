@@ -1,6 +1,0 @@
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/rebuild_cache.dir
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/edit_cache.dir
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/unit_tests_input.dir
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/route_finding.dir
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/unit_tests_graphics.dir
-/Users/rashad/Desktop/UNI/Year_1/proogramming-project/cw1/sc20rh/cw2/build/CMakeFiles/unit_tests_logic.dir

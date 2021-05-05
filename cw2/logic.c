@@ -40,7 +40,7 @@ int find_closest_point (double lat, double lon)
 }
 
 // return the path using Dijkstra
-// returns NULL if not successful
+// NodeArray.length = 0 if not successful
 struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
 {
     // start time
@@ -50,37 +50,13 @@ struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
     int start_node = node1_id;
     int end_node = node2_id;
     int visited[MAX_NODES]; // keeping track of the nodes which are already visited
-    //double cost[MAX_NODES][MAX_NODES]; // cost matrix
     double dist[MAX_NODES]; // distance of each node from the start node
     int pred[MAX_NODES];
 
     int i, j, count, next_node;
     double min_dist;
 
-    // filling the cost matrix
-    // for (i = 0; i < num_nodes; i++)
-    // {
-    //     for (j = 0; j < count; j++)
-    //     {
-    //         if (adjacency_matrix[i][j] == 0)
-    //         {
-    //             cost[i][j] = INF;
-    //         }
-    //         else
-    //         {
-    //             cost[i][j] = adjacency_matrix[i][j];
-    //         }
-               
-    //     }
-        
-    // }
-
-    // for (i = 0; i < num_nodes; i++)
-    // {
-    //     dist[i] = cost[start_node][i]; /* code */
-    //     pred[i] = start_node;
-    //     visited[i] = 0;
-    // }
+    // Creating the dist array
     for (i = 0; i < num_nodes; i++)
     {
         if (adjacency_matrix[start_node][i] == 0)
@@ -116,18 +92,7 @@ struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
         
         visited[next_node] = 1;
 
-        // for(i = 0; i < num_nodes; i++)
-        // {
-        //     if(!visited[i])
-        //     {
-        //         if ((min_dist + cost[next_node][i]) < dist[i])
-        //         {
-        //             dist[i] = min_dist + cost[next_node][i];
-        //             pred[i] = next_node;
-        //         }
-                
-        //     }
-        // }
+        // Optimizing the dist and filling pred array
         for(i = 0; i < num_nodes; i++)
         {
             if(!visited[i])
@@ -193,13 +158,13 @@ struct NodeArray find_shortest_path_Djikstra (int node1_id, int node2_id)
 }
 
 // return the path using Floyd
-// returns NULL if not successful
+// NodeArray.length = 0 if not successful
 struct NodeArray find_shortest_path_Floyd (int node1_id, int node2_id) 
 {
     // start time
     double time_spent = 0.0;
     clock_t begin = clock();
-    
+
     struct NodeArray final_path;
     final_path.array = (struct Node* ) malloc(sizeof(struct Node));;
     final_path.length = 0;
@@ -217,14 +182,7 @@ struct NodeArray find_shortest_path_Floyd (int node1_id, int node2_id)
                 dist_f[i][j] = adjacency_matrix[i][j];
                 next[i][j] = j;
             }
-            // dis[i][j] = graph[i][j];
- 
-            // // No edge between node
-            // // i and j
-            // if (graph[i][j] == INF)
-            //     Next[i][j] = -1;
-            // else
-            //     Next[i][j] = j;
+
         }
     }
     // applying the Floyd's algorithm

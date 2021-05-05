@@ -1,7 +1,8 @@
 #include "unity.h"
 #include "input.h"
 
-
+// function used to read map and initilize the program
+// return 0 if successful, 1 otherwise
 void test_read_map()
 {
     FILE* map;

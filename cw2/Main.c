@@ -6,6 +6,8 @@
 
 int main(int argc, char const *argv[])
 {
+
+    // reading the .map file
     FILE* map;
     if (!read_map(map))
     {
@@ -22,7 +24,7 @@ int main(int argc, char const *argv[])
         scanf("%d", &option);
         printf("\n");
 
-        // By ID
+        // choose nodes by ID
         if (option == 1)
         {
             option = 0;
@@ -71,6 +73,7 @@ int main(int argc, char const *argv[])
                     option = 0;
                     while ((getchar()) != '\n');
 
+                    // Run Dijkstra's Algorithm
                     final_path = find_shortest_path_Djikstra (art_id_1, art_id_2);
                 }
 
@@ -80,6 +83,7 @@ int main(int argc, char const *argv[])
                     option = 0;
                     while ((getchar()) != '\n');
 
+                    // Run Floyd's Algorithm
                     final_path = find_shortest_path_Floyd (art_id_1, art_id_2);
                 }
                 else if (option == 0)
@@ -118,7 +122,7 @@ int main(int argc, char const *argv[])
             double latitude;
             double longitude;
 
-            // inputting from the user
+            // inputting from the user node 1
             printf("Please enter the latitude of the node 1: ");
             scanf("%lf", &latitude);
             printf("Please enter the longitude of the node 1: ");
@@ -161,7 +165,7 @@ int main(int argc, char const *argv[])
                 {
                     option = 0;
                     while ((getchar()) != '\n');
-
+                    // Run Dijkstra
                     final_path = find_shortest_path_Djikstra (node_id_1, node_id_2);
                 }
 
@@ -170,7 +174,7 @@ int main(int argc, char const *argv[])
                 {
                     option = 0;
                     while ((getchar()) != '\n');
-
+                    // Run Floyd
                     final_path = find_shortest_path_Floyd (node_id_1, node_id_2);
                 }
                 else if (option == 0)

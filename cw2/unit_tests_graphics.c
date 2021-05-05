@@ -1,7 +1,9 @@
 #include "unity.h"
 #include "graphics.h"
+#include <stdlib.h>
 
-
+// functions used to draw the resutls
+// return 0 if correct 
 void test_show_results()
 {
     struct NodeArray test_nodes;

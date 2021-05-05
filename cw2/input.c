@@ -53,6 +53,7 @@ int read_nodes(FILE* file)
             all_nodes[num_nodes].id = strtoll(id, NULL, 10);
             i = i+5;
             j = 0;
+            // finding latitude
             while (line[i] != ' ')
             {
                lat[j] = line[i];
@@ -63,6 +64,7 @@ int read_nodes(FILE* file)
             all_nodes[num_nodes].lat = (strtod(lat, NULL) - 0.0000008);
             i = i+5;
             j = 0;
+            // Finding Longtitude
             while (line[i] != ' ')
             {
                lon[j] = line[i];
