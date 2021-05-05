@@ -13,7 +13,7 @@ set(CMAKE_C_FLAGS "-std=c99")
 include_directories("Unity-master/include")
 
 #creates an executable by compiling and linking a list of space separated C files.
-add_executable(route_finding main.c logic.c input.c graphics.c)
+add_executable(route_finding Main.c logic.c input.c graphics.c)
 
 add_executable(unit_tests_logic unit_tests_logic.c logic.c input.c graphics.c Unity-master/src/unity.c)
 add_executable(unit_tests_input unit_tests_input.c input.c Unity-master/src/unity.c)
